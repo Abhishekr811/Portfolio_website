@@ -3143,7 +3143,8 @@ input, select, textarea {
 			}
 
 			.image.main {
-				height: 12em;
+				height: 50vh;
+				overflow: hidden;
 			}
 
 		/* Section/Article */
@@ -3177,34 +3178,66 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				width: 17em;
-				-moz-transform: translateX(17em);
-				-webkit-transform: translateX(17em);
-				-ms-transform: translateX(17em);
-				transform: translateX(17em);
+				width: 280px;
+				-moz-transform: translateX(280px);
+				-webkit-transform: translateX(280px);
+				-ms-transform: translateX(280px);
+				transform: translateX(280px);
 				right: 0;
 			}
 
 				#header > header {
-					padding: 2em;
+					padding: 1.5em;
 				}
 
 					#header > header .avatar {
-						margin: 0 auto 1.6875em auto;
-						width: 6em;
+						margin: 0 auto 1em auto;
+						width: 5em;
+					}
+
+					#header > header .avatar img {
+						width: 80px;
+						height: 80px;
 					}
 
 					#header > header h1 {
-						font-size: 1.5em;
+						font-size: 1.25em;
 					}
 
 					#header > header p {
-						margin: 1em 0 0 0;
+						margin: 0.5em 0 0 0;
+						font-size: 0.85em;
+					}
+
+				#header > nav {
+					padding: 0.5em 0;
+				}
+
+					#header > nav ul li {
+						display: block;
+						text-align: center;
+					}
+
+					#header > nav ul li a {
+						padding: 0.75em 1em;
+						display: block;
+						font-size: 1em;
 					}
 
 				#header > footer {
-					padding: 1.5em;
+					padding: 1em;
 				}
+
+					#header > footer .icons {
+						display: flex;
+						justify-content: center;
+						flex-wrap: wrap;
+						gap: 0.5em;
+					}
+
+					#header > footer .icons li {
+						margin: 0 0.25em;
+					}
 
 		/* Main */
 
@@ -3243,10 +3276,10 @@ input, select, textarea {
 				}
 
 			body.header-visible #wrapper, body.header-visible #titleBar {
-				-moz-transform: translateX(-17em);
-				-webkit-transform: translateX(-17em);
-				-ms-transform: translateX(-17em);
-				transform: translateX(-17em);
+				-moz-transform: translateX(-280px);
+				-webkit-transform: translateX(-280px);
+				-ms-transform: translateX(-280px);
+				transform: translateX(-280px);
 			}
 
 	}
@@ -3259,10 +3292,88 @@ input, select, textarea {
 
 			html, body {
 				min-width: 320px;
+				overflow-x: hidden;
 			}
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 11pt;
+			}
+
+		/* Header - Mobile Fixes */
+
+			#header {
+				width: 260px;
+				-moz-transform: translateX(260px);
+				-webkit-transform: translateX(260px);
+				-ms-transform: translateX(260px);
+				transform: translateX(260px);
+			}
+
+				#header > header {
+					padding: 1.25em;
+				}
+
+					#header > header .avatar img {
+						width: 70px;
+						height: 70px;
+					}
+
+					#header > header h1 {
+						font-size: 1.1em;
+					}
+
+					#header > header p {
+						font-size: 0.8em;
+					}
+
+				#header > nav ul li a {
+					padding: 0.6em 0.8em;
+					font-size: 0.95em;
+				}
+
+				#header > footer {
+					padding: 0.75em;
+				}
+
+		/* Title Bar - Mobile Fixes */
+
+			#titleBar {
+				height: 40px;
+			}
+
+				#titleBar .title {
+					height: 40px;
+					line-height: 40px;
+					font-size: 0.9em;
+					padding: 0 0.75em;
+				}
+
+				#titleBar .toggle {
+					width: 50px;
+				}
+
+					#titleBar .toggle:before {
+						height: 40px;
+						line-height: 40px;
+						width: 40px;
+						font-size: 12px;
+					}
+
+			body.header-visible #wrapper, body.header-visible #titleBar {
+				-moz-transform: translateX(-260px);
+				-webkit-transform: translateX(-260px);
+				-ms-transform: translateX(-260px);
+				transform: translateX(-260px);
+			}
+
+		/* Main - Mobile Fixes */
+
+			#main > section > .container {
+				padding: 1.5em 0 0 0;
+			}
+
+			.image.main {
+				height: 40vh;
 			}
 
 		/* List */
