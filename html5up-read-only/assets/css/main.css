@@ -2193,9 +2193,12 @@ input, select, textarea {
 		}
 
 			.image.avatar img {
-				border-radius: 100%;
+				border-radius: 100% !important;
 				display: block;
-				width: 100%;
+				width: 100% !important;
+				height: 100% !important;
+				object-fit: cover !important;
+				aspect-ratio: 1 / 1 !important;
 			}
 
 		.image.main {
@@ -3184,10 +3187,15 @@ input, select, textarea {
 				-ms-transform: translateX(280px);
 				transform: translateX(280px);
 				right: 0;
+				z-index: 10002;
+				overflow-x: hidden;
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch;
 			}
 
 				#header > header {
 					padding: 1.5em;
+					flex-shrink: 0;
 				}
 
 					#header > header .avatar {
@@ -3202,6 +3210,7 @@ input, select, textarea {
 
 					#header > header h1 {
 						font-size: 1.25em;
+						margin: 0 0 0.25em 0;
 					}
 
 					#header > header p {
@@ -3210,10 +3219,18 @@ input, select, textarea {
 					}
 
 				#header > nav {
+					flex-grow: 1;
+					overflow: visible;
 					padding: 0.5em 0;
 				}
 
+					#header > nav ul {
+						margin: 0;
+						padding: 0;
+					}
+
 					#header > nav ul li {
+						border-top: solid 2px #5ccfb1;
 						display: block;
 						text-align: center;
 					}
@@ -3221,11 +3238,18 @@ input, select, textarea {
 					#header > nav ul li a {
 						padding: 0.75em 1em;
 						display: block;
+						width: 100%;
+						box-sizing: border-box;
 						font-size: 1em;
+					}
+
+					#header > nav ul li:first-child {
+						border-top: 0;
 					}
 
 				#header > footer {
 					padding: 1em;
+					flex-shrink: 0;
 				}
 
 					#header > footer .icons {
@@ -3233,6 +3257,7 @@ input, select, textarea {
 						justify-content: center;
 						flex-wrap: wrap;
 						gap: 0.5em;
+						margin: 0;
 					}
 
 					#header > footer .icons li {
@@ -3243,6 +3268,12 @@ input, select, textarea {
 
 			#main > section > .container {
 				padding: 2em 0 0 0;
+			}
+
+		/* Wrapper */
+
+			#wrapper {
+				padding-right: 280px;
 			}
 
 		/* Footer */
@@ -3307,11 +3338,21 @@ input, select, textarea {
 				-webkit-transform: translateX(260px);
 				-ms-transform: translateX(260px);
 				transform: translateX(260px);
+				right: 0;
+				z-index: 10002;
+				overflow-x: hidden;
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch;
 			}
 
 				#header > header {
 					padding: 1.25em;
+					flex-shrink: 0;
 				}
+
+					#header > header .avatar {
+						margin: 0 auto 0.75em auto;
+					}
 
 					#header > header .avatar img {
 						width: 70px;
@@ -3320,20 +3361,58 @@ input, select, textarea {
 
 					#header > header h1 {
 						font-size: 1.1em;
+						margin: 0 0 0.25em 0;
 					}
 
 					#header > header p {
 						font-size: 0.8em;
+						margin: 0;
 					}
 
-				#header > nav ul li a {
-					padding: 0.6em 0.8em;
-					font-size: 0.95em;
+				#header > nav {
+					flex-grow: 1;
+					overflow: visible;
 				}
+
+					#header > nav ul {
+						margin: 0;
+						padding: 0;
+					}
+
+					#header > nav ul li {
+						border-top: solid 2px #5ccfb1;
+						display: block;
+					}
+
+					#header > nav ul li a {
+						padding: 0.6em 0.8em;
+						font-size: 0.95em;
+						display: block;
+						width: 100%;
+						box-sizing: border-box;
+					}
+
+					#header > nav ul li:first-child {
+						border-top: 0;
+					}
 
 				#header > footer {
 					padding: 0.75em;
+					flex-shrink: 0;
 				}
+
+					#header > footer .icons {
+						display: flex;
+						justify-content: center;
+						flex-wrap: wrap;
+						gap: 0.5em;
+						margin: 0;
+					}
+
+					#header > footer .icons li {
+						display: inline-block;
+						margin: 0 0.25em;
+					}
 
 		/* Title Bar - Mobile Fixes */
 
@@ -3374,6 +3453,12 @@ input, select, textarea {
 
 			.image.main {
 				height: 40vh;
+			}
+
+		/* Wrapper - Mobile Fixes */
+
+			#wrapper {
+				padding-right: 260px;
 			}
 
 		/* List */
