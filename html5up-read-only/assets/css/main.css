@@ -2873,6 +2873,62 @@ input, select, textarea {
 					color: inherit;
 				}
 
+/* Responsive Resume iframe */
+iframe[title="Resume"] {
+    width: 100%;
+    min-height: 400px;
+    height: 50vh;
+    max-height: 800px;
+    border: none;
+}
+
+@media screen and (max-width: 1024px) {
+    iframe[title="Resume"] {
+        min-height: 350px;
+        height: 45vh;
+        max-height: 600px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    iframe[title="Resume"] {
+        min-height: 300px;
+        height: 40vh;
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    iframe[title="Resume"] {
+        min-height: 250px;
+        height: 35vh;
+        max-height: 400px;
+    }
+    
+    /* Extra typography fixes for small screens */
+    body, input, select, textarea {
+        font-size: 11pt;
+        overflow-x: hidden;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    h3 {
+        font-size: 1.25em;
+    }
+    
+    p {
+        margin: 0 0 1.5em 0;
+        word-wrap: break-word;
+    }
+    
+    .container {
+        padding: 0 1em;
+    }
+}
+
 /* XLarge */
 
 	@media screen and (max-width: 1680px) {
